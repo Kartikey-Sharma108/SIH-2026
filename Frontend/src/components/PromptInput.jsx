@@ -144,7 +144,7 @@ export default function PromptInput() {
                     result.blocked ? 'text-red-400' : 'text-emerald-400'
                   }`}
                 >
-                  {result.blocked ? 'Blocked' : 'Passed'}
+                  {result.blocked ? '🚫 Denied' : '✅ Passed'}
                 </span>
                 <RiskBadge score={result.riskScore} />
               </div>

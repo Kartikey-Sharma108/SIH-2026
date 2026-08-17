@@ -26,6 +26,11 @@ pool.query('SELECT NOW()')
     process.exit(1);
   });
 
+// Handle errors on idle clients in the pool to prevent crashes
+pool.on('error', (err) => {
+  console.error('⚠  Unexpected error on idle database client:', err.message);
+});
+
 // ── Express app ─────────────────────────────────────────────────────────────
 const app = express();
 

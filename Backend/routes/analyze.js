@@ -60,12 +60,12 @@ router.post('/', async (req, res) => {
     console.log(`📊  Risk score: ${riskScore}/100 (threshold: ${threshold})`);
 
     // ── Decision: Block or Allow ──────────────────────────────────────────
-    if (riskScore > threshold) {
+    if (riskScore >= threshold) {
       // ── BLOCKED ─────────────────────────────────────────────────────────
       const blockReason = reasons.join('; ');
       const processingMs = Date.now() - startTime;
 
-      console.log(`🚫  BLOCKED (score ${riskScore} > ${threshold})`);
+      console.log(`🚫  BLOCKED (score ${riskScore} >= ${threshold})`);
 
       // Insert security log
       await _insertLog(pool, {
