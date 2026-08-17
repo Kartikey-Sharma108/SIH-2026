@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="AI Security Gateway — Real-time prompt analysis, threat detection, and security monitoring dashboard" />
+    <title>AI Security Gateway — Dashboard</title>
+
+    <!-- Tailwind CSS via CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        darkMode: 'class',
+        theme: {
+          extend: {
+            colors: {
+              slate: {
+                850: '#141B2D',
+                950: '#0B1120',
+              },
+              cyan: {
+                400: '#22D3EE',
+                500: '#06B6D4',
+              },
+              threat: {
+                low: '#10B981',
+                medium: '#F59E0B',
+                high: '#EF4444',
+                critical: '#DC2626',
+              },
+            },
+            fontFamily: {
+              sans: ['Inter', 'system-ui', '-apple-system', 'sans-serif'],
+              mono: ['JetBrains Mono', 'Fira Code', 'monospace'],
+            },
+            animation: {
+              'slide-in': 'slideIn 0.3s cubic-bezier(0.16, 1, 0.3, 1)',
+              'fade-in': 'fadeIn 0.2s ease-out',
+              'pulse-glow': 'pulseGlow 2s ease-in-out infinite',
+              'flash-row': 'flashRow 1.5s ease-out',
+            },
+            keyframes: {
+              slideIn: {
+                '0%': { transform: 'translateX(100%)', opacity: '0' },
+                '100%': { transform: 'translateX(0)', opacity: '1' },
+              },
+              fadeIn: {
+                '0%': { opacity: '0', transform: 'translateY(-8px)' },
+                '100%': { opacity: '1', transform: 'translateY(0)' },
+              },
+              pulseGlow: {
+                '0%, 100%': { boxShadow: '0 0 5px rgba(6, 182, 212, 0.3)' },
+                '50%': { boxShadow: '0 0 20px rgba(6, 182, 212, 0.6)' },
+              },
+              flashRow: {
+                '0%': { backgroundColor: 'rgba(6, 182, 212, 0.2)' },
+                '100%': { backgroundColor: 'transparent' },
+              },
+            },
+          },
+        },
+      }
+    </script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+  </head>
+  <body class="dark bg-[#0B1120] text-gray-100 font-sans antialiased">
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>
